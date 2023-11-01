@@ -2,7 +2,6 @@ package com.example.login;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
-import androidx.core.content.ContextCompat;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -10,7 +9,6 @@ import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.net.Uri;
 import android.os.Bundle;
-import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
@@ -24,15 +22,14 @@ public class LoginActivity extends AppCompatActivity {
     Button connecte;
     EditText mail;
 
-    @SuppressLint("ResourceAsColor")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
         getSupportActionBar().setTitle("Connectez-vous");
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().setBackgroundDrawable(new ColorDrawable(Color.BLACK));
-        setContentView(R.layout.activity_login);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
         facebook = findViewById(R.id.ffb);
@@ -47,14 +44,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
         connecte.setOnClickListener(view -> {
-            String mail1 = mail.getText().toString();
-            String psswd1 = psswd.getText().toString();
+            String mailText = mail.getText().toString();
+            String psswdText = psswd.getText().toString();
 
-            if (mail1.isEmpty() || psswd1.isEmpty()) {
+            if (mailText.isEmpty() || psswdText.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Les champs sont vides!", Toast.LENGTH_SHORT).show();
             } else {
-                InformationActivity info = new InformationActivity(mail1);
-
+                InformationActivity info = new InformationActivity(mailText);
                 Intent intent = new Intent(LoginActivity.this, ShowActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("obj", info);

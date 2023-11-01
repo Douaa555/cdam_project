@@ -6,13 +6,15 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:layout_margin="20dp"
+    android:padding="10dp"
     android:background="@color/white"
     android:layout_gravity="center"
     tools:context="com.example.login.LoginActivity"
     tools:ignore="MissingDefaultResource">
+
     <ListView
         android:id="@+id/list_item"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
- />
+        android:layout_height="match_parent" />
+
 </LinearLayout>

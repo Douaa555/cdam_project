@@ -8,7 +8,8 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Login">
+        android:theme="@style/Theme.delivery">
+
         <activity
             android:name=".LoginActivity"
             android:windowSoftInputMode="adjustPan"
@@ -19,22 +20,20 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
             android:name=".RegisterActivity"
             android:exported="true"
             android:label="Créer un compte"
-            android:theme="@style/Theme.Login"
+            android:theme="@style/Theme.delivery"
             android:parentActivityName=".LoginActivity">
         </activity>
 
         <activity
             android:name=".ShowActivity"
             android:exported="true"
-            android:label="Show Informations"
-            android:theme="@style/Theme.Login">
-            <intent-filter>
-                <action android:name="android.intent.action.VIEW" />
-            </intent-filter>
+            android:label="Informations"
+            android:theme="@style/Theme.delivery">
         </activity>
 
     </application>

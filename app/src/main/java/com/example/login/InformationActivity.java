@@ -1,15 +1,13 @@
 package com.example.login;
 
-import android.widget.EditText;
-
 import java.io.Serializable;
 
 public class InformationActivity implements Serializable {
+
     public String prenom;
     public String nom;
     public String email;
     public String phone;
-    public String emaill;
     public String phoneSpinner;
 
     public InformationActivity(String prenom, String nom, String email, String phone, String phoneSpinner) {
@@ -20,8 +18,8 @@ public class InformationActivity implements Serializable {
         this.phoneSpinner = phoneSpinner;
     }
 
-    public InformationActivity(String emaill){
-        this.emaill = emaill;
+    public InformationActivity(String email){
+        this.email = email;
     }
 
     public String getPrenom(){
