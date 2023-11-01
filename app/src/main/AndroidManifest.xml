@@ -12,8 +12,8 @@
 
         <activity
             android:name=".LoginActivity"
-            android:windowSoftInputMode="adjustPan"
-            android:exported="true">
+            android:exported="true"
+            android:windowSoftInputMode="adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,16 +25,14 @@
             android:name=".RegisterActivity"
             android:exported="true"
             android:label="Créer un compte"
-            android:theme="@style/Theme.delivery"
-            android:parentActivityName=".LoginActivity">
-        </activity>
+            android:parentActivityName=".LoginActivity"
+            android:theme="@style/Theme.delivery"></activity>
 
         <activity
             android:name=".ShowActivity"
             android:exported="true"
             android:label="Informations"
-            android:theme="@style/Theme.delivery">
-        </activity>
+            android:theme="@style/Theme.delivery"></activity>
 
     </application>
 

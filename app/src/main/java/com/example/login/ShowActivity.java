@@ -6,8 +6,10 @@ import android.os.Bundle;
 import android.view.WindowManager;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
+
 import java.util.ArrayList;
 
 public class ShowActivity extends AppCompatActivity {
@@ -30,16 +32,16 @@ public class ShowActivity extends AppCompatActivity {
 
         listView = findViewById(R.id.list_item);
 
-        if (info.getNom()==null) {
+        if (info.getNom() == null) {
             infoList.add("Email: " + info.getEmail());
         } else {
             infoList.add("Prenom: " + info.getPrenom());
             infoList.add("Nom: " + info.getNom());
             infoList.add("Email: " + info.getEmail());
-            infoList.add("Telephone: " + info.phoneSpinner + " " +info.getPhone());
+            infoList.add("Telephone: " + info.phoneSpinner + " " + info.getPhone());
         }
 
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this,android.R.layout.simple_list_item_1, infoList);
+        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, infoList);
         listView.setAdapter(adapter);
     }
 

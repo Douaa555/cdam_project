@@ -4,11 +4,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:layout_margin="20dp"
-    android:padding="10dp"
-    android:background="@color/white"
     android:layout_gravity="center"
+    android:layout_margin="20dp"
+    android:background="@color/white"
+    android:orientation="vertical"
+    android:padding="10dp"
     tools:context="com.example.login.LoginActivity"
     tools:ignore="MissingDefaultResource">
 

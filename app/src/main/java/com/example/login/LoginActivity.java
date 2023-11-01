@@ -21,6 +21,7 @@ public class LoginActivity extends AppCompatActivity {
     TextView account;
     Button connecte;
     EditText mail;
+    TextView email_err;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,7 @@ public class LoginActivity extends AppCompatActivity {
         mail = findViewById(R.id.mail);
         psswd = findViewById(R.id.psswd);
         connecte = findViewById(R.id.btn1);
+        email_err = findViewById(R.id.email_err);
 
         account.setOnClickListener(view -> {
             Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -46,16 +48,23 @@ public class LoginActivity extends AppCompatActivity {
         connecte.setOnClickListener(view -> {
             String mailText = mail.getText().toString();
             String psswdText = psswd.getText().toString();
+            String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]+";
 
             if (mailText.isEmpty() || psswdText.isEmpty()) {
                 Toast.makeText(LoginActivity.this, "Les champs sont vides!", Toast.LENGTH_SHORT).show();
-            } else {
+            } else if (mailText.matches(emailPattern)) {
                 InformationActivity info = new InformationActivity(mailText);
                 Intent intent = new Intent(LoginActivity.this, ShowActivity.class);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("obj", info);
                 intent.putExtras(bundle);
                 startActivity(intent);
+            } else {
+                if (!mailText.matches(emailPattern)) {
+                    email_err.setText("*Format incorrecte:xxxx@xxx.xx");
+                } else {
+                    email_err.setText("");
+                }
             }
         });
 
