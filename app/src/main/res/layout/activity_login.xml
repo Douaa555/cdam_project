@@ -31,6 +31,7 @@
         android:layout_height="40dp"
         />
     <EditText
+        android:id="@+id/mail"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/email"
@@ -48,11 +49,12 @@
         android:layout_height="55dp"
         />
     <EditText
+        android:id="@+id/psswd"
         android:layout_width="320dp"
         android:layout_height="wrap_content"
         android:drawableStart="@drawable/lock"
         android:drawablePadding="10dp"
-        android:hint="Password"
+        android:hint="Mot de passe"
         android:textSize="16dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintHorizontal_bias="0.085"
@@ -65,18 +67,19 @@
         android:layout_height="4dp"
         />
     <TextView
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="Mot de passe oublier ? "
         android:textSize="17dp"
         android:textColor="@color/dark_blue"
-        android:layout_marginStart="140dp"
+        android:textAlignment="textEnd"
         />
     <View
         android:layout_width="wrap_content"
         android:layout_height="30dp"
         />
     <Button
+        android:id="@+id/btn1"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:backgroundTint="@color/orange"
@@ -112,6 +115,7 @@
             android:textColor="@android:color/black" />
 
         <TextView
+            android:id="@+id/compte"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="CREE UN COMPTE "
@@ -171,6 +175,7 @@
             android:src="@drawable/facebook" />
 
         <TextView
+            android:id="@+id/ffb"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Continuer avec Facebook"
