@@ -66,29 +66,30 @@ public class RegisterActivity extends AppCompatActivity {
             if (prenomText.isEmpty() || nomText.isEmpty() || emailText.isEmpty() || phoneText.isEmpty() ||
                     mdpsText.isEmpty()) {
                 Toast.makeText(RegisterActivity.this, "Il existe des champs vides!", Toast.LENGTH_SHORT).show();
-            }
-            if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
-                InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
-                Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
-                Bundle bundle = new Bundle();
-                bundle.putSerializable("obj", info);
-                intent.putExtras(bundle);
-                startActivity(intent);
             } else {
-                if (!emailText.matches(emailPattern)) {
-                    email_err.setText("*Format incorrecte:xxxx@xxx.xx");
+                if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
+                    InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
+                    Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
+                    Bundle bundle = new Bundle();
+                    bundle.putSerializable("obj", info);
+                    intent.putExtras(bundle);
+                    startActivity(intent);
                 } else {
-                    email_err.setText("");
-                }
-                if (!mdpsText.matches(passwd_pattern)) {
-                    mdps_err.setText("*Mot de passe faible");
-                } else {
-                    mdps_err.setText("");
-                }
-                if (phoneText.length() < 10) {
-                    phone_err.setText("*Numéro érroné");
-                } else {
-                    phone_err.setText("");
+                    if (!emailText.matches(emailPattern)) {
+                        email_err.setText("*Format incorrecte:xxxx@xxx.xx");
+                    } else {
+                        email_err.setText("");
+                    }
+                    if (!mdpsText.matches(passwd_pattern)) {
+                        mdps_err.setText("*Mot de passe faible");
+                    } else {
+                        mdps_err.setText("");
+                    }
+                    if (phoneText.length() < 10) {
+                        phone_err.setText("*Numéro érroné");
+                    } else {
+                        phone_err.setText("");
+                    }
                 }
             }
         });
