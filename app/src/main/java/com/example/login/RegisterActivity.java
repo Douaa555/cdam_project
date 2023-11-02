@@ -23,6 +23,9 @@ public class RegisterActivity extends AppCompatActivity {
     private EditText Mdps;
     private Spinner phoneSpinner;
     private Button btnSubmit;
+
+    private TextView prenom_err;
+    private TextView nom_err;
     private TextView phone_err;
     private TextView mdps_err;
     private TextView email_err;
@@ -42,9 +45,12 @@ public class RegisterActivity extends AppCompatActivity {
         Mdps = findViewById(R.id.mdps);
         phoneSpinner = findViewById(R.id.phoneSpinner);
         btnSubmit = findViewById(R.id.btn);
+
         phone_err = findViewById(R.id.phone_err);
         mdps_err = findViewById(R.id.mdps_err);
         email_err = findViewById(R.id.email_err);
+        prenom_err = findViewById(R.id.prenom_err);
+        nom_err = findViewById(R.id.nom_err);
 
 
         String[] phoneOptions = {"+231", "+1", "+44", "+61", "+81"};
@@ -63,36 +69,62 @@ public class RegisterActivity extends AppCompatActivity {
             String passwd_pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=_-])(?=\\S+$).{8,20}$";
             String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]+";
 
-            if (prenomText.isEmpty() || nomText.isEmpty() || emailText.isEmpty() || phoneText.isEmpty() ||
-                    mdpsText.isEmpty()) {
-                Toast.makeText(RegisterActivity.this, "Il existe des champs vides!", Toast.LENGTH_SHORT).show();
-            } else {
-                if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
-                    InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
-                    Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
-                    intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
-                    intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
-                    intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
-                    Bundle bundle = new Bundle();
-                    bundle.putSerializable("obj", info);
-                    intent.putExtras(bundle);
-                    startActivity(intent);
+            if (prenomText.isEmpty() || nomText.isEmpty() || emailText.isEmpty() || phoneText.isEmpty() || mdpsText.isEmpty()) {
+
+                if (prenomText.isEmpty()) {
+                    prenom_err.setText("* Field required!");
                 } else {
-                    if (!emailText.matches(emailPattern)) {
-                        email_err.setText("*Format incorrecte:xxxx@xxx.xx");
-                    } else {
-                        email_err.setText("");
-                    }
-                    if (!mdpsText.matches(passwd_pattern)) {
-                        mdps_err.setText("*Mot de passe faible");
-                    } else {
-                        mdps_err.setText("");
-                    }
-                    if (phoneText.length() < 10) {
-                        phone_err.setText("*Numéro érroné");
-                    } else {
-                        phone_err.setText("");
-                    }
+                    prenom_err.setText("");
+                }
+
+                if (nomText.isEmpty()) {
+                    nom_err.setText("* Field required!");
+                } else {
+                    nom_err.setText("");
+                }
+
+                if (emailText.isEmpty()) {
+                    email_err.setText("* Field required!");
+                } else {
+                    email_err.setText("");
+                }
+
+                if (mdpsText.isEmpty()) {
+                    mdps_err.setText("* Field required!");
+                } else {
+                    mdps_err.setText("");
+                }
+
+                if (phoneText.isEmpty()) {
+                    phone_err.setText("* Field required!");
+                } else {
+                    phone_err.setText("");
+                }
+            } else if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
+                InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
+                Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
+                Bundle bundle = new Bundle();
+                bundle.putSerializable("obj", info);
+                intent.putExtras(bundle);
+                startActivity(intent);
+            } else {
+                if (!emailText.matches(emailPattern)) {
+                    email_err.setText("*Format incorrecte:xxxx@xxx.xx");
+                } else {
+                    email_err.setText("");
+                }
+                if (!mdpsText.matches(passwd_pattern)) {
+                    mdps_err.setText("*Mot de passe faible");
+                } else {
+                    mdps_err.setText("");
+                }
+                if (phoneText.length() < 10) {
+                    phone_err.setText("*Numéro érroné");
+                } else {
+                    phone_err.setText("");
                 }
             }
         });

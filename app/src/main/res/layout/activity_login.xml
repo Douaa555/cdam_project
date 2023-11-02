@@ -50,18 +50,10 @@
 
     <TextView
         android:id="@+id/email_err"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="30dp"
-        android:text=""
-        android:textColor="@color/red"
-        android:textSize="14dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintHorizontal_bias="0.085"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.022" />
+        android:textColor="@color/red" />
 
     <View
         android:layout_width="wrap_content"
@@ -83,9 +75,12 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.022" />
 
-    <View
-        android:layout_width="wrap_content"
-        android:layout_height="4dp" />
+    <TextView
+        android:id="@+id/mdps_err"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:textColor="@color/red" />
 
     <TextView
         android:layout_width="match_parent"

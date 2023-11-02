@@ -15,13 +15,17 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.w3c.dom.Text;
+
 public class LoginActivity extends AppCompatActivity {
-    TextView facebook;
-    EditText psswd;
-    TextView account;
-    Button connecte;
-    EditText mail;
-    TextView email_err;
+
+    private TextView facebook;
+    private EditText psswd;
+    private TextView account;
+    private Button connecte;
+    private EditText mail;
+    private TextView email_err;
+    private TextView mdps_err;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,6 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         psswd = findViewById(R.id.psswd);
         connecte = findViewById(R.id.btn1);
         email_err = findViewById(R.id.email_err);
+        mdps_err = findViewById(R.id.mdps_err);
 
         account.setOnClickListener(view -> {
             Intent register = new Intent(LoginActivity.this, RegisterActivity.class);
@@ -51,7 +56,19 @@ public class LoginActivity extends AppCompatActivity {
             String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]+";
 
             if (mailText.isEmpty() || psswdText.isEmpty()) {
-                Toast.makeText(LoginActivity.this, "Les champs sont vides!", Toast.LENGTH_SHORT).show();
+                //Toast.makeText(LoginActivity.this, "Les champs sont vides!", Toast.LENGTH_SHORT).show();
+                if (mailText.isEmpty()) {
+                    email_err.setText("* Field required!");
+                } else {
+                    email_err.setText("");
+                }
+
+                if (psswdText.isEmpty()) {
+                    mdps_err.setText("* Field required!");
+                } else {
+                    mdps_err.setText("");
+                }
+
             } else if (mailText.matches(emailPattern)) {
                 InformationActivity info = new InformationActivity(mailText);
                 Intent intent = new Intent(LoginActivity.this, ShowActivity.class);
