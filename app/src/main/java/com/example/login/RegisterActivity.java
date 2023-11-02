@@ -66,6 +66,7 @@ public class RegisterActivity extends AppCompatActivity {
             String phoneText = Phone.getText().toString();
             String mdpsText = Mdps.getText().toString();
             String spinnerText = phoneSpinner.getSelectedItem().toString();
+
             String passwd_pattern = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=_-])(?=\\S+$).{8,20}$";
             String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]+";
 
@@ -100,6 +101,7 @@ public class RegisterActivity extends AppCompatActivity {
                 } else {
                     phone_err.setText("");
                 }
+
             } else if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
                 InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
                 Intent intent = new Intent(getApplicationContext(), ShowActivity.class);

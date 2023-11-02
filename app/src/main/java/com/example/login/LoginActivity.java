@@ -56,7 +56,7 @@ public class LoginActivity extends AppCompatActivity {
             String emailPattern = "[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\\.[a-z]+";
 
             if (mailText.isEmpty() || psswdText.isEmpty()) {
-                //Toast.makeText(LoginActivity.this, "Les champs sont vides!", Toast.LENGTH_SHORT).show();
+
                 if (mailText.isEmpty()) {
                     email_err.setText("* Field required!");
                 } else {
