@@ -73,31 +73,31 @@ public class RegisterActivity extends AppCompatActivity {
             if (prenomText.isEmpty() || nomText.isEmpty() || emailText.isEmpty() || phoneText.isEmpty() || mdpsText.isEmpty()) {
 
                 if (prenomText.isEmpty()) {
-                    prenom_err.setText("* Field required!");
+                    prenom_err.setText("* Champ vide!");
                 } else {
                     prenom_err.setText("");
                 }
 
                 if (nomText.isEmpty()) {
-                    nom_err.setText("* Field required!");
+                    nom_err.setText("* Champ vide!");
                 } else {
                     nom_err.setText("");
                 }
 
                 if (emailText.isEmpty()) {
-                    email_err.setText("* Field required!");
+                    email_err.setText("* Champ vide!");
                 } else {
                     email_err.setText("");
                 }
 
                 if (mdpsText.isEmpty()) {
-                    mdps_err.setText("* Field required!");
+                    mdps_err.setText("* Champ vide!");
                 } else {
                     mdps_err.setText("");
                 }
 
                 if (phoneText.isEmpty()) {
-                    phone_err.setText("* Field required!");
+                    phone_err.setText("* Champ vide!");
                 } else {
                     phone_err.setText("");
                 }

@@ -58,13 +58,13 @@ public class LoginActivity extends AppCompatActivity {
             if (mailText.isEmpty() || psswdText.isEmpty()) {
 
                 if (mailText.isEmpty()) {
-                    email_err.setText("* Field required!");
+                    email_err.setText("* Champ vide!");
                 } else {
                     email_err.setText("");
                 }
 
                 if (psswdText.isEmpty()) {
-                    mdps_err.setText("* Field required!");
+                    mdps_err.setText("* Champ vide!");
                 } else {
                     mdps_err.setText("");
                 }
