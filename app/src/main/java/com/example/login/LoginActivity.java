@@ -55,6 +55,9 @@ public class LoginActivity extends AppCompatActivity {
             } else if (mailText.matches(emailPattern)) {
                 InformationActivity info = new InformationActivity(mailText);
                 Intent intent = new Intent(LoginActivity.this, ShowActivity.class);
+                intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+                intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                 Bundle bundle = new Bundle();
                 bundle.putSerializable("obj", info);
                 intent.putExtras(bundle);

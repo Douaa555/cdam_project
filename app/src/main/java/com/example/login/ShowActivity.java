@@ -24,11 +24,6 @@ public class ShowActivity extends AppCompatActivity {
         getWindow().addFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN);
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
 
-        Intent intent_ = new Intent(getApplicationContext(), ShowActivity.class);
-        intent_.addFlags(intent_.FLAG_ACTIVITY_CLEAR_TASK);
-        intent_.addFlags(intent_.FLAG_ACTIVITY_REORDER_TO_FRONT);
-        intent_.addFlags(intent_.FLAG_ACTIVITY_NEW_TASK);
-
         Intent intent = getIntent();
         Bundle bundle = intent.getExtras();
         InformationActivity info = (InformationActivity) bundle.getSerializable("obj");
@@ -48,10 +43,5 @@ public class ShowActivity extends AppCompatActivity {
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, infoList);
         listView.setAdapter(adapter);
-    }
-
-    @SuppressLint("MissingSuperCall")
-    @Override
-    public void onBackPressed() {
     }
 }

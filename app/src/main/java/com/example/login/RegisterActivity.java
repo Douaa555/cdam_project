@@ -70,6 +70,9 @@ public class RegisterActivity extends AppCompatActivity {
                 if (emailText.matches(emailPattern) && mdpsText.matches(passwd_pattern) && phoneText.length() >= 10) {
                     InformationActivity info = new InformationActivity(prenomText, nomText, emailText, phoneText, spinnerText);
                     Intent intent = new Intent(getApplicationContext(), ShowActivity.class);
+                    intent.addFlags(intent.FLAG_ACTIVITY_CLEAR_TASK);
+                    intent.addFlags(intent.FLAG_ACTIVITY_REORDER_TO_FRONT);
+                    intent.addFlags(intent.FLAG_ACTIVITY_NEW_TASK);
                     Bundle bundle = new Bundle();
                     bundle.putSerializable("obj", info);
                     intent.putExtras(bundle);
