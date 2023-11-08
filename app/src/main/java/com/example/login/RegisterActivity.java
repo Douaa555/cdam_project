@@ -61,6 +61,7 @@ public class RegisterActivity extends AppCompatActivity {
         items.add(new Country(R.drawable.uk, "+44"));
         items.add(new Country(R.drawable.rs, "+7"));
         items.add(new Country(R.drawable.jp, "+81"));
+
         CountryAdapter adapter = new CountryAdapter(RegisterActivity.this, R.layout.activity_country, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         phoneSpinner.setAdapter(adapter);
