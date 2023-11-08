@@ -27,7 +27,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
         View layout = convertView;
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
             layout = inflater.inflate(itemResourceId, parent, false);
         }
@@ -41,7 +41,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
     @Override
     public View getDropDownView(int position, View convertView, ViewGroup parent) {
         View layout = convertView;
-        if (convertView == null){
+        if (convertView == null) {
             LayoutInflater inflater = activity.getLayoutInflater();
             layout = inflater.inflate(itemResourceId, parent, false);
         }
