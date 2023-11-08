@@ -14,6 +14,9 @@ import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class RegisterActivity extends AppCompatActivity {
 
     private EditText Prenom;
@@ -52,9 +55,13 @@ public class RegisterActivity extends AppCompatActivity {
         prenom_err = findViewById(R.id.prenom_err);
         nom_err = findViewById(R.id.nom_err);
 
-
-        String[] phoneOptions = {"+231", "+1", "+44", "+61", "+81"};
-        ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_spinner_item, phoneOptions);
+        List<Country> items = new ArrayList<>();
+        items.add(new Country(R.drawable.alg, "+213"));
+        items.add(new Country(R.drawable.us, "+1"));
+        items.add(new Country(R.drawable.uk, "+44"));
+        items.add(new Country(R.drawable.rs, "+7"));
+        items.add(new Country(R.drawable.jp, "+81"));
+        CountryAdapter adapter = new CountryAdapter(RegisterActivity.this, R.layout.activity_country, items);
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         phoneSpinner.setAdapter(adapter);
 
