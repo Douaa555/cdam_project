@@ -10,6 +10,7 @@ import android.widget.ListView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.app.AppCompatDelegate;
 
+import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
 
 public class ShowActivity extends AppCompatActivity {
