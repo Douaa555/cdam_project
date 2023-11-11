@@ -39,7 +39,7 @@ public class ShowActivity extends AppCompatActivity {
             infoList.add("Prenom: " + info.getPrenom());
             infoList.add("Nom: " + info.getNom());
             infoList.add("Email: " + info.getEmail());
-            infoList.add("Telephone: " + info.phoneSpinner + " " + info.getPhone());
+            infoList.add("Telephone: " + info.phoneSpinner+ " " + info.getPhone());
         }
 
         ArrayAdapter<String> adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, infoList);

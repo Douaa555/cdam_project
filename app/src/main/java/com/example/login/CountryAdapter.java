@@ -17,7 +17,7 @@ public class CountryAdapter extends ArrayAdapter<Country> {
     private TextView nameTV;
     private ImageView flagIV;
 
-    public CountryAdapter(Activity activity, int itemResourceId, List<Country> items) {
+    public CountryAdapter(Activity activity, int itemResourceId, List<Country> items){
         super(activity, itemResourceId, items);
         this.activity = activity;
         this.itemResourceId = itemResourceId;
